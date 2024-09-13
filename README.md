@@ -1,4 +1,4 @@
-# Predictive Analythics : Loan Approval Analysis
+# **Loan Approval Analysis**
 
 ### **Background Project**
 
