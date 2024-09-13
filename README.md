@@ -1,9 +1,9 @@
-# Predictive Analythics : Loan Status Analysis
+# Predictive Analythics : Loan Approval Analysis
 
 ### **Background Project**
 
 ---
-![loan-vector-icon](https://github.com/user-attachments/assets/c51029d1-c7a5-4a1f-a7b1-dca6a4c41221)
+![loan](https://github.com/user-attachments/assets/0d3bd17d-6e46-4fc6-b026-c2739648ef6c)
 
 A loan is a type of debt that can involve any kind of tangible asset, although it is typically associated with monetary or financial loans. Like other debt instruments, a loan requires the redistribution of financial assets over time between the borrower (debtor) and the lender (creditor).
 
@@ -13,14 +13,16 @@ The borrower initially receives a sum of money from the lender, which is to be r
 ### **Problem Statements**
 Based on the background that gave rise to this research, the details of the problems that can be solved in this project are as follows:
 
-*   What is the best machine learning model for predicting loan status?
-*   Can gender influence the success of a loan?
-*   
+* What is the best machine learning model for predicting loan approval status?
+* Can gender influence the success of a loan?
+* What is the best algorithm model that can be used to make this analysis?
+    
 ### **Goals**
 The aims of carrying out this experiment are:
-*   Pengolahan data dari beberapa variabel yang telah ditentukan dalam memprediksi penyakit stroke.
-*   Sistem ini dapat digunakan oleh masyarakat untuk memprediksi penyakit stroke berdasarkan gejala-gejala yang ada.
-*   Membandingkan beberapa algoritma yang digunakan dalam memprediksi penyakit stroke guna mendapatkan performa yang terbaik.
+
+* Knowing what the best model algorithm is to predict loan approval.
+* Knowing whether gender is a variable that can be used to successfully get loan approval
+* Comparing several algorithms used in predicting loan approval to get the best performance.
 
 ### **Solution Statements**
 In order to achieve the existing research objectives, the author will build a prediction model with 3 different algorithm models. All models will be compared and the best one will be selected with the best performance and accuracy used:
@@ -49,12 +51,14 @@ The dataset that the author uses in this project is the Dataset with the title L
 *   `Credit_History` : If they have good/bad credit history.
 *   `Area` : Geographical Area
 *   `Status` : Loan approval status
+ 
+![dfinfo](https://github.com/user-attachments/assets/e9d051e1-859c-4538-8ba7-6acad2465116)
 
-![image](https://user-images.githubusercontent.com/55022521/189842969-a4ab8c9e-35a1-4b66-97cf-7ffc5827943d.png)
- 
+
  **Correlation Matrix**
- 
-![corelational matrix](https://user-images.githubusercontent.com/55022521/189872685-aa01ed7b-78b6-4f1c-b8b5-e77be697dca7.png)
+
+ ![corelate_loan](https://github.com/user-attachments/assets/f94e02d1-ee58-44a7-83f8-89bcc7c755c5)
+
 
 ## **Data Cleansing**
 At this stage, the author performs data cleaning. Data cleaning is done by filling in the missing values ​​in the dataset with the `fillna` method which is filled with the `mode` or `median` value.
@@ -71,6 +75,7 @@ At this stage, the author carries out the encoding process for the category feat
 At this stage, the author performs standardization using the `StandarScaler` found in the sckitlearn library. This standardization is very useful in leveling the scale of data, especially numerical data.
 
 *   **Train-Test-Split**
+  
 At this stage, the author divides the dataset into training data and test data using `train_test_split` from the Scikitlearn library. This dataset division aims to be used later to train and evaluate model performance. In this project, 90% of the dataset is used to train the model, and the remaining 10% is used to evaluate model performance.
 .
 
@@ -82,15 +87,15 @@ For each of the algorithms, the author will explain the performance of the train
 
 In the training phase, the accuracy of each model is as follows:
 
-1. The model using the Logistic Regression algorithm achieved an accuracy score of 0.9998, or approximately 99%.
-2. The model using the XGBoost Classifier algorithm achieved an accuracy score of 0.7959, or approximately 80%.
-3. The model using the Support Vector Machine algorithm achieved an accuracy score of 0.9146, or approximately 91%.
+1. The model using the Logistic Regression algorithm achieved an accuracy score of 0.8044, or approximately 80%.
+2. The model using the XGBoost Classifier algorithm achieved an accuracy score of 1.000, or approximately 100%.
+3. The model using the Support Vector Machine algorithm achieved an accuracy score of 0.8065, or approximately 81%.
 
 In the testing phase, the accuracy of each model is as follows:
 
-1. The model using the Logistic Regression algorithm achieved an accuracy score of 0.9998, or approximately 99%.
-2. The model using the XGBoost Classifier algorithm achieved an accuracy score of 0.7959, or approximately 80%.
-3. The model using the Support Vector Machine algorithm achieved an accuracy score of 0.9146, or approximately 91%.
+1. The model using the Logistic Regression algorithm achieved an accuracy score of 0.8455, or approximately 85%.
+2. The model using the XGBoost Classifier algorithm achieved an accuracy score of 0.8048, or approximately 80%.
+3. The model using the Support Vector Machine algorithm achieved an accuracy score of 0.8455, or approximately 85%.
 
 The highest accuracy in the training phase was achieved by the XGBoost Classifier algorithm, followed by Logistic Regression and Support Vector Machine. For model testing accuracy, the highest result was achieved by the Logistic Regression algorithm, followed by Support Vector Machine, with the lowest accuracy being from the XGBoost Classifier algorithm. Based on the results from training and testing the models, the author concludes that the best and most stable performance was achieved using the K-Neighbors Classifier algorithm.
 
@@ -101,12 +106,12 @@ Because the model used is a classification model, the model that has been built 
 
 The following is an explanation of each value contained in the confusion matrix:
 
-*   **Prediction Value**: keluaran dari program dimana nilainya Positif dan Negatif.
-*   **Actual Value**: nilai sebenarnya dimana nilainya True dan False.
-*   **True Positive** (TP): Nilai aktual Positif dan diprediksi juga Positif.
-*   **True Negative** (TN): Nilai actual Negatif dan prediksi juga Negatif.
-*  **False Positive** (FP): Nilai actual negatif tetapi prediksi positif. Istilah lain nya dikenal sebagai 'Type 1 error' atau kesalahan Tipe 1
-*   **False Negative** (FN) :Nilai actual Positif tetapi prediksinya Negatif. Istilah lain nya sebagai 'Type 2 error' atau kesalahan Tipe 2
+* **Prediction Value**: the output of the program where the value is Positive and Negative.
+* **Actual Value**: the actual value where the value is True and False.
+* **True Positive** (TP): The actual value is Positive and the prediction is also Positive.
+* **True Negative** (TN): The actual value is Negative and the prediction is also Negative.
+* **False Positive** (FP): The actual value is negative but the prediction is positive. Another term is known as 'Type 1 error' or Type 1 error
+* **False Negative** (FN): The actual value is Positive but the prediction is Negative. Another term is as 'Type 2 error' or Type 2 error
 
 Confusion matrix can also be used to evaluate the performance of a classification model by calculating performance metrics such as `accuracy`, `precision`, `recall or sensitivity`, and `F-1 Score`.
 
@@ -138,22 +143,36 @@ F-1 Score  = (2 * Recall * Precision) / (Recall + Precision)
 ```
 
 Let's calculate it manually:
+This is the confusion matrix: 
+
+([[24, 16],
+
+ [ 8, 75]])
+
+`True Positive` (TP):  24 (Top-left element)
+
+`False Positive` (FP): 16 (Top-right element)
+
+`False Negative` (FN): 8 (Bottom-left element)
+
+`True Negative` (TN): 75 (Bottom-right element)
+
 
 - Accuracy = (TP+TN) / (TP+FP+FN+TN)
 
-Accuracy = (261 + 757) / (261 + 218 + 709 + 757) = 0.523
+Accuracy = (24 + 75) / (24 + 16 + 8 + 75) = 0.8048
  
 - Precision = (TP) / (TP + FP)
 
-Precision = 261 / (261 + 218) = 0.544
+Precision = 24 / (24 + 16) = 0.6
 
 - Recall  = TP / (TP + FN)
 
-Recall = 261 /(261 + 709 ) = 0.269
+Recall = 24 /(24 + 8 ) = 0.75
 
 - F-1 Score  = (2 * Recall * Precision) / (Recall + Precision)
 
-F-1 Score  = ( 2 * 0.269 * 0.544 ) / ( 0.269 * 0.544) = 0.360
+F-1 Score  = ( 2 * 0.75 * 0.6 ) / ( 0.75 + 0.6) = 0.667
 
 
 ## **Conclusion**
